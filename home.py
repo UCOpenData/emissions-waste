@@ -1,6 +1,7 @@
 import streamlit as st
 from sidebar import init_sidebar
 
+#Maria was here
 st.set_page_config(page_title="Lobbyist Data App", layout="wide")
 
 st.title("Welcome to the Lobbyist Data App!")
