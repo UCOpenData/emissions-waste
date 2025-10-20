@@ -1,3 +1,4 @@
+#hashmark
 import streamlit as st
 import pandas as pd
 import seaborn as sns
@@ -13,7 +14,7 @@ init_sidebar()
 
 # def year_slider():
 #     year = st.slider("Select year",
-#                      min_value = 2021,
+#                      min_value = 2020,
 #                      max_value = 2024,
 #                      value = 2021,
 #                      step = 1)
