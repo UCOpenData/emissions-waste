@@ -7,3 +7,5 @@ st.title("Welcome to our energy & emissions tracker for UChicago's buildings!!")
 st.write("Use the sidebar to navigate to different pages.")
 
 init_sidebar()
+
+#rebecca was here
