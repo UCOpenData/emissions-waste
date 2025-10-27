@@ -2,6 +2,9 @@ import streamlit as st
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+from sidebar import init_sidebar
+
+init_sidebar()
 
 # try:
 #     params = st.query_params["lobbyist_id"]
