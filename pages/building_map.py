@@ -5,13 +5,20 @@ import matplotlib.pyplot as plt
 from sidebar import init_sidebar
 import folium 
 from streamlit_folium import st_folium
+import geopandas as gpd
 
 init_sidebar()
 
 hyde_park_map = folium.Map(location=[41.7943, -87.5907], zoom_start=15)
-hyde_park_map
-st_folium(hyde_park_map)
 
+
+folium.Marker(location= [41.78898211, -87.6009439], tooltip = 'Cobb Hall', icon= folium.Icon(color = 'red', icon= ' ')).add_to(hyde_park_map)
+
+
+gdf = gpd.read_file('https://data.cityofchicago.org/resource/syp8-uezg.geojson')
+gdf
+folium.GeoJson(gdf).add_to(hyde_park_map)
+st_folium(hyde_park_map)
 # try:
 #     params = st.query_params["lobbyist_id"]
 #     activity = pd.read_csv('./datasets/LD_Lobbying_Activity.csv')
