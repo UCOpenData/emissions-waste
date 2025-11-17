@@ -3,11 +3,14 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 from sidebar import init_sidebar
-import folium
-
+import folium 
+from streamlit_folium import st_folium
 
 init_sidebar()
 
+hyde_park_map = folium.Map(location=[41.7943, -87.5907], zoom_start=15)
+hyde_park_map
+st_folium(hyde_park_map)
 
 # try:
 #     params = st.query_params["lobbyist_id"]
