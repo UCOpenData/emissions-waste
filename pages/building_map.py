@@ -9,7 +9,7 @@ import geopandas as gpd
 
 init_sidebar()
 
-hyde_park_map = folium.Map(location=[41.7943, -87.5907], zoom_start=15)
+hyde_park_map = folium.Map(location=[41.7943, -87.5907], zoom_start=15, tiles = "cartodb positron")
 
 
 folium.Marker(location= [41.78898211, -87.6009439], tooltip = 'Cobb Hall', icon= folium.Icon(color = 'red', icon= ' ')).add_to(hyde_park_map)
@@ -17,7 +17,9 @@ folium.Marker(location= [41.78898211, -87.6009439], tooltip = 'Cobb Hall', icon=
 
 gdf = gpd.read_file('https://data.cityofchicago.org/resource/syp8-uezg.geojson')
 gdf
-folium.GeoJson(gdf).add_to(hyde_park_map)
+st.write(gdf.dtypes)
+gdf2 = gdf.drop(columns = ['qc_date', 'edit_date', 'condition_', 'bldg_activ', 'bldg_creat', 'bldg_end_d', 'demolished'])
+folium.GeoJson(gdf2).add_to(hyde_park_map)
 st_folium(hyde_park_map)
 # try:
 #     params = st.query_params["lobbyist_id"]

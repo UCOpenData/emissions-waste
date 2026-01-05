@@ -4,3 +4,5 @@ seaborn
 matplotlib
 thefuzz
 folium
+streamlit-folium
+geopandas
